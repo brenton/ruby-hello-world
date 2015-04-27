@@ -20,6 +20,8 @@ cd $APP_ROOT_DIR
 #
 [ "$1" == "--debug" ] && exec /bin/bash
 
+echo "---> CUSTOM STI RUN COMPLETE"
+
 if is_puma_installed; then
   exec bundle exec "puma --config ${HOME}/etc/puma.cfg"
 else
