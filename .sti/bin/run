@@ -16,7 +16,7 @@ export RAILS_ENV=${RAILS_ENV:-"${RACK_ENV}"}
 cd $APP_ROOT_DIR
 
 # For SCL enablement
-source .bashrc
+source /opt/openshift/src/.bashrc
 
 # Allow users to inspect/debug the builder image itself, by using:
 # $ docker run -i -t openshift/centos-ruby-builder --debug
