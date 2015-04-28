@@ -9,14 +9,18 @@ function is_puma_installed() {
 # application server can pick it up and use it as 'application root'
 #
 export APP_ROOT_DIR="${HOME}/${APP_ROOT:-.}"
+echo $APP_ROOT_DIR
 
 export RACK_ENV=${RACK_ENV:-"production"}
+echo $RACK_ENV
+
 export RAILS_ENV=${RAILS_ENV:-"${RACK_ENV}"}
+echo $RAILS_ENV
 
 cd $APP_ROOT_DIR
 
 # For SCL enablement
-source /opt/openshift/src/.bashrc
+source /opt/openshift/src/.bashrc 2&>1
 
 # Allow users to inspect/debug the builder image itself, by using:
 # $ docker run -i -t openshift/centos-ruby-builder --debug
