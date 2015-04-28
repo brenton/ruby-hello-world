@@ -20,7 +20,7 @@ echo $RAILS_ENV
 cd $APP_ROOT_DIR
 
 # For SCL enablement
-source /opt/openshift/src/.bashrc 2&>1
+source /opt/openshift/src/.bashrc 2&>1 || echo "scl failed"
 
 # Allow users to inspect/debug the builder image itself, by using:
 # $ docker run -i -t openshift/centos-ruby-builder --debug
